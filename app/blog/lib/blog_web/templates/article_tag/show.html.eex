@@ -1,0 +1,18 @@
+<h1>Show Article tag</h1>
+
+<ul>
+
+  <li>
+    <strong>Article:</strong>
+    <%= @article_tag.article_id %>
+  </li>
+
+  <li>
+    <strong>Tag:</strong>
+    <%= @article_tag.tag_id %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.article_tag_path(@conn, :edit, @article_tag) %></span>
+<span><%= link "Back", to: Routes.article_tag_path(@conn, :index) %></span>

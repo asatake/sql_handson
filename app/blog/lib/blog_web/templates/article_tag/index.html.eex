@@ -1,0 +1,28 @@
+<h1>Listing Article tags</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Article</th>
+      <th>Tag</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for article_tag <- @article_tags do %>
+    <tr>
+      <td><%= article_tag.article_id %></td>
+      <td><%= article_tag.tag_id %></td>
+
+      <td>
+        <%= link "Show", to: Routes.article_tag_path(@conn, :show, article_tag) %>
+        <%= link "Edit", to: Routes.article_tag_path(@conn, :edit, article_tag) %>
+        <%= link "Delete", to: Routes.article_tag_path(@conn, :delete, article_tag), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Article tag", to: Routes.article_tag_path(@conn, :new) %></span>
